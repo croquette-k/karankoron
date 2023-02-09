@@ -94,3 +94,17 @@ document.querySelectorAll(".fadeup").forEach((item) => {
       scrub: true,
     }
   });
+  gsap.to(".image1", {
+    opacity: 1,
+    duration: 0.1,
+    repeat: -1,
+    repeatDelay: 1,
+    yoyo: true, 
+  });
+  gsap.to(".image2", {
+    opacity: 0,
+    duration: 0.1,
+    repeat: -1,
+    repeatDelay: 1,
+    yoyo: true, 
+  });
