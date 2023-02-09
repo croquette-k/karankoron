@@ -36,7 +36,7 @@ gsap.from('.kuma-look', {
     
     scrollTrigger: {
       trigger: '.kuma-look',
-      start: 'center center+=100',
+      start: 'center 80%',
     }
   });
 
