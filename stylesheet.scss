@@ -1,0 +1,518 @@
+@charset "UTF-8";
+:root {
+  --gray1: #EBEBEB;
+  --gray2: #707070;
+  --gray3: #404040;
+  --red1: #B8231C;
+}
+
+body {
+  font-size: 14px;
+  line-height: 2;
+  color: var(--gray2);
+  font-family: source-han-sans-japanese, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  position: relative;
+  overflow-x: hidden;
+}
+section {
+    position: relative;
+    overflow-x: hidden;
+}
+
+h2 {
+    font-size: 20px;
+    font-family: source-han-sans-japanese, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+h3 {
+    font-size: 30px;
+    font-family: source-han-sans-japanese, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+p {
+    max-width: 500px;
+}
+.eat {
+    width: 75px;
+    position: absolute;
+}
+.eat1 {
+    left: 5%;
+}
+.eat2 {
+    right: 5%;
+}
+.news-eat {
+    transform: translateY(200px);
+}
+.shop-eat {
+    transform: translateY(245px);
+}
+.eat {
+    display: none;
+}
+.kira1 {
+    width: 20px;
+    transform: translateX(60px);
+    opacity: 0;
+	animation: kira-anim 2s infinite;
+}
+.kira2 {
+    width: 50px;
+    transform: translateY(0px) translateX(-100px);
+    animation-delay: 1s;
+    opacity: 1;
+	animation: kira-anim2 2s infinite;
+}
+@keyframes kira-anim {
+	0%{ opacity: 0;}
+    50%{ opacity: 1;}
+}
+@keyframes kira-anim2 {
+	0%{ opacity: 1;}
+    50%{ opacity: 0;}
+}
+
+
+/* ヘッダー */
+/* ハンバーガーメニュー */
+.openbtn{
+	position: fixed;
+    top: 0;
+    right: 0;
+	background-image: url(img/hamburger.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+	cursor: pointer;
+    width: 87px;
+    height:79px;
+    z-index: 9999;
+}
+
+.openbtn span{
+    display: inline-block;
+    transition: all .4s;
+    position: absolute;
+    right: 24px;
+    height: 2px;
+    border-radius: 2px;
+	background: #707070;
+  	width: 30%;
+  }
+
+
+.openbtn span:nth-of-type(1) {
+	top:26px;	
+}
+
+.openbtn span:nth-of-type(2) {
+	top:35px;
+}
+
+.openbtn span:nth-of-type(3) {
+	top:44px;
+}
+.openbtn.active {
+    background-image: none;
+}
+
+.openbtn.active span:nth-of-type(1) ,
+.openbtn.active span:nth-of-type(3){
+    top: 35px;
+}
+#g-nav{
+    position:fixed;
+    z-index: 999;
+	top:0;
+    right: -120%;
+	width:100%;
+    height: 100vh;
+	background: #fff;
+    background-image: url("https://www.transparenttextures.com/patterns/soft-wallpaper.png");
+	transition: all 0.6s;
+}
+
+#g-nav.panelactive{
+    right: 0;
+}
+
+#g-nav ul {
+    position: absolute;
+    z-index: 999;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+
+#g-nav li{
+	list-style: none;
+    text-align: center;
+}
+
+#g-nav li a{
+	color: #333;
+	text-decoration: none;
+	padding:10px;
+	display: block;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	font-weight: bold;
+}
+
+/* メインヴィジュアル */
+#mainvisual {
+    height: 557px;
+    background-color: var(--red1);
+    background-image: url("https://www.transparenttextures.com/patterns/soft-wallpaper.png");    border: 0;
+
+    .logo {
+        width: 162px;
+        margin: 50px 46px;
+    }
+    .main-img {
+        position: absolute;
+        z-index: 20;
+    }
+    .koguma {
+        width: 124px;
+        top: 300px;
+        left: 50%;
+        transform: translateX(20px);
+    }
+    .tree {
+        height: 80px;
+    }
+    .tree-a {
+        height: 100px;
+    }
+    .tree1 {
+        top: 340px;
+        left: -30px;
+    }
+    .tree2 {
+        top: 440px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .tree3 {
+        top: 460px;
+        right: 15%;
+    }
+    .tree4 {
+        top: 405px;
+        left: 15%;
+        height: 130px;
+    }
+    .tree5 {
+        right: -30px;
+    }
+}
+.main-container {
+	position: relative;
+	width: 250px;
+	max-width: 100%;
+	height: 225px;
+    margin: 0 auto;
+}
+
+.image {
+	position: absolute;
+	width: 100%;
+	opacity: 0;
+	animation: change-img-anim 2s infinite;
+    transition: none;
+}
+
+.image:nth-of-type(1) {
+	animation-delay: 0s;
+}
+.image:nth-of-type(2) {
+	animation-delay: 1s;
+}
+
+@keyframes change-img-anim {
+	0%{ opacity: 0;}
+    0.1% { opacity: 1;}
+    50%{ opacity: 1;}
+    50.1% {opacity: 0;}
+}
+.wave {
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    transform: translateY(-99%);
+}
+
+// about 
+#about {
+    margin: 0 auto;
+    padding: 55px 33px 100px 33px;
+    max-width: 500px;
+    p {
+        margin: 60px 0 45px 0;
+    }
+    .about-img-wrap {
+        position: relative;
+        text-align: right;
+        .croquette {
+            width: 100%;
+            max-width: 500px;
+        }
+        .kuma-eat {
+            width: 303px;
+            position: absolute;
+            right: -100px;
+            bottom: -80px;
+        }
+    }
+    
+}
+.wave2 {
+    display: block;
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    left: 0;
+    transform: translateY(-1%) rotate(180deg);
+    z-index: 30;
+}
+#secret {
+    padding: 0 25px 150px 25px;
+    background-color: var(--red1);
+    background-image: url("https://www.transparenttextures.com/patterns/soft-wallpaper.png");    color: #fff;
+    h3 {
+        margin-top: 150px;
+        text-align: center;
+        font-size: 40px;
+        font-family: ab-tsubaki, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        letter-spacing: -0.15em;
+    }
+    h4 {
+        margin-bottom: 50px;
+        font-size: 25px;
+        font-family: vdl-penletter, sans-serif;
+        font-weight: 500;
+        font-style: normal;
+    }
+    .kuma-look {
+        position: absolute;
+        width: 242px;
+        top: 120px;
+        right: -120px;
+    }
+    .secret1 {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 60px 0 30px 0;
+        .secret1-content {
+            margin-bottom: 35px;
+            text-align: center;
+            img {
+                width: 150px;
+                margin-bottom: 30px;
+            }
+            p {
+                text-align: left;
+            }
+        }
+    }
+    .kuma-cooking {
+        width: 256px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%) 
+    }
+    .secret2 {
+        max-width: 400px;
+        margin: 0 auto;
+        margin-top: 70px;
+        .secret2-content {
+            margin-bottom: 60px;
+            img {
+                width: 100%;
+                margin-bottom: 25px;
+            }
+        }
+    }
+    .kuma-light {
+        width: 195px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .secret3 {
+        max-width: 400px;
+        margin: 0 auto;
+        margin-top: 70px;
+        h4 {
+            margin-bottom: 20px;
+        }
+        img {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+    }
+    .rabbit {
+        width: 250px;
+        position: relative;
+        left: 50%;
+        bottom: -50px;
+        transform: translateX(-50%);
+    }
+}
+.wave3 {
+    width: 100%;
+    height: 100px;
+
+    position: absolute;
+    transform: translateY(-99%);
+}
+#news {
+    margin: 0 auto;
+    padding: 100px 40px 50px 40px;
+    max-width: 500px;
+    .news-top {
+        position: relative;
+        .news-btn {
+            padding: 5px 20px;
+            border: 1px solid var(--gray2);
+            border-radius: 17px;
+        }
+        .kuma-news {
+            width: 230px;
+            position: absolute;
+            top: -30px;
+            left: 130px;
+        }
+        .bird {
+            width: 40px;
+            position: absolute;
+        }
+        .bird1 {
+            left: 280px;
+            top: -60px;
+        }
+        .bird2 {
+            left: 240px;
+            top: -40px;
+        }
+    }
+    .news-box {
+        margin: 0a;
+        margin-top: 70px;
+        
+        .news-contents {
+            margin-bottom: 20px;
+            display: flex;
+            .news-image {
+                margin-right: 30px;
+                width: 85px;
+                height: 85px;
+                background-color: var(--red1);
+                border-radius: 9px;
+            }
+            .news-text {
+                width: 60%;
+                span {
+                    color: var(--red1);
+                }
+            }
+        }
+    }
+}
+.car {
+    width: 150px;
+    position: absolute;
+    right: -150px;
+}
+.car-wrap {
+    width: 100%;
+    height: 110px;
+    position: relative;
+    overflow-x: hidden;
+}
+#shop {
+    margin: 0 auto;
+    padding: 50px 35px 150px 35px;
+    max-width: 500px;
+    .shop-img {
+        text-align: center;
+        margin-top: 20px;
+        width: 100%;
+        max-width: 500px;
+    }
+    .shop-wrap {
+        text-align: center;
+        margin-bottom: 50px;
+        .logo2 {
+           margin-top: 50px;
+           margin-bottom: 30px;
+           width: 150px;
+        }
+        p {
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+        span {
+            font-size: 20px;
+        }
+    }
+}
+footer {
+    padding: 20px;
+    background-color: var(--red1);
+    background-image: url("https://www.transparenttextures.com/patterns/soft-wallpaper.png");
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .footer-logo {
+        width: 120px;
+    }
+    .pagetop {
+        width: 112px;
+    }
+}
+
+// ページトップ
+#page-top a {
+    /*aタグの形状*/
+	display: block;
+	width: 112px;
+	height: 126px;
+	color: #333;
+	text-align: center;
+	text-transform: uppercase; 
+	text-decoration: none;
+	font-size:0.6rem;
+    /*背景画像の指定*/
+	background: url("img/pagetop.png") no-repeat center;
+	background-size: contain;
+}
+
+#page-top.floatAnime a{
+	width: 150px;
+	height: 200px;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    /*背景画像の指定*/
+	background: url("img/balloon_kuma.png") no-repeat center;
+	background-size: contain;
+    /*アニメーションの指定*/
+	animation: floatAnime 2s linear infinite;
+	opacity: 0;
+}
+
+@keyframes floatAnime {
+  0% { transform: translateX(0); opacity: 0; }
+  25% { transform: translateX(-6px);opacity: 1; }
+  50% { transform: translateX(0) }
+  90% { transform: translateX(6px);opacity: 1; }
+  100% { opacity:0 }
+}

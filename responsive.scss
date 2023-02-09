@@ -1,0 +1,51 @@
+@media (min-width: 960px) {
+    .eat {
+        display: block;
+    }
+    #secret {
+        padding: 40px 60px 150px 60px;
+        .secret1 {
+            margin-top: 80px;
+            max-width: 1000px;
+            .secret1-wrap {
+                display: flex;
+                margin-bottom: 50px;
+                .secret1-content {
+                    margin: 0 20px;
+                }
+            }
+        }
+        .secret2 {
+            max-width: 1000px;
+            .secret2-wrap {
+                display: flex;
+                margin-bottom: 80px;
+                .secret2-content {
+                    margin: 0 20px;
+                }
+            }
+        }
+        .secret3 {
+            max-width: 1000px;
+            .secret3-wrap {
+                margin: 0 auto;
+                margin-bottom: 80px;
+                display: flex;
+                align-items: center;
+                img {
+                    width: 50%;
+                }
+                p {
+                    margin: 0 40px;
+                }
+            }
+        }
+    }
+    #news {
+        padding-top: 150px;
+        padding-bottom: 100px;
+    }
+    #shop {
+        padding-top: 100px;
+    }
+}
